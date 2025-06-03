@@ -214,6 +214,16 @@ export default function App() {
       </table>
 
       <button onClick={exportCSV}>Export as CSV</button>
+      <button onClick={() => {
+  if (confirm("Are you sure you want to reset all data?")) {
+    localStorage.clear();
+    location.reload(); // force refresh
+  }
+}}>
+  Reset All Data
+</button>
+
     </div>
+    
   );
 }
